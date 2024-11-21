@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stule.css">
+</head>
+<body>
+    <h1>My Book Library</h1>
+    
+    <div class="navigation-buttons">
+        <button id="prev-book">Previous Book</button>
+        <button id="new-book">Add New Book</button>
+        <button id="next-book">Next Book</button>
+    </div>
+
+    <div id="book-display">
+        <div id="book-details">
+            <h2 id="book-title">No Books Yet</h2>
+            <p id="book-author">Add a book to get started</p>
+            <p id="book-pages">-</p>
+            <label>
+                <input type="checkbox" id="read-status"> Read
+            </label>
+        </div>
+        <button id="remove-book">Remove Book</button>
+    </div>
+
+    <div id="new-book-dialog">
+        <form id="new-book-form">
+            <h2>Add New Book</h2>
+            <input type="text" id="book-title-input" placeholder="Book Title" required>
+            <input type="text" id="book-author-input" placeholder="Author" required>
+            <input type="number" id="book-pages-input" placeholder="Number of Pages" required>
+            <label>
+                <input type="checkbox" id="book-read-input"> Read
+            </label>
+            <div>
+                <button type="submit">Add Book</button>
+                <button type="button" id="cancel-book">Cancel</button>
+            </div>
+        </form>
+    </div>    
+</body>
+</html>
