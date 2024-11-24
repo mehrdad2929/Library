@@ -4,43 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="stule.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>My Book Library</h1>
-    
-    <div class="navigation-buttons">
-        <button id="prev-book">Previous Book</button>
-        <button id="new-book">Add New Book</button>
-        <button id="next-book">Next Book</button>
+    <div class="header">
+        <h1>My Library</h1>
+        <button id="addBookBtn">Add New Book</button>
     </div>
 
-    <div id="book-display">
-        <div id="book-details">
-            <h2 id="book-title">No Books Yet</h2>
-            <p id="book-author">Add a book to get started</p>
-            <p id="book-pages">-</p>
-            <label>
-                <input type="checkbox" id="read-status"> Read
-            </label>
-        </div>
-        <button id="remove-book">Remove Book</button>
-    </div>
-
-    <div id="new-book-dialog">
-        <form id="new-book-form">
-            <h2>Add New Book</h2>
-            <input type="text" id="book-title-input" placeholder="Book Title" required>
-            <input type="text" id="book-author-input" placeholder="Author" required>
-            <input type="number" id="book-pages-input" placeholder="Number of Pages" required>
-            <label>
-                <input type="checkbox" id="book-read-input"> Read
-            </label>
-            <div>
+    <table class="book-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Read</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="bookList">
+            <!-- Books will be added here dynamically -->
+        </tbody>
+    </table>
+    <dialog id="addBookModal">
+        <h2>Add New Book</h2>
+        <form id="addBookForm">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" required>
+            </div>
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" id="author" required>
+            </div>
+            <div class="form-group">
+                <label for="pages">Pages:</label>
+                <input type="number" id="pages" required min="1">
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="read">
+                    Have you read it?
+                </label>
+            </div>
+            <div class="button-group">
+                <button type="button" onclick="closeModal()">Cancel</button>
                 <button type="submit">Add Book</button>
-                <button type="button" id="cancel-book">Cancel</button>
             </div>
         </form>
-    </div>    
-</body>
+    </dialog>
+    <!-- <div id="addBookModal" class="modal">
+        <div class="modal-content">
+            <h2>Add New Book</h2>
+            <form id="addBookForm">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" required>
+                </div>
+                <div class="form-group">
+                    <label for="pages">Pages:</label>
+                    <input type="number" id="pages" required min="1">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="read">
+                        Have you read it?
+                    </label>
+                </div>
+                <div class="button-group">
+                    <button type="button" onclick="closeModal()">Cancel</button>
+                    <button type="submit">Add Book</button>
+                </div>
+            </form>
+        </div>
+    </div> -->
 </html>
